@@ -1,0 +1,40 @@
+<h1 class="text-center p-3">
+    <?= $params["country"]["name"] ?>
+</h1>
+
+<h2 class="p-2">
+    Városok:
+</h2>
+
+<div class="btn-group-sm m-2">
+    <?php foreach ($params["cities"] as $city) :?>
+        <a href="/varos-megtekintese?id=<?= $city["id"] ?>" class="btn btn-outline-info m-1">
+            <?= $city["name"] ?>
+        </a>
+    <?php endforeach; ?>
+</div>
+
+<h2 class="p-2">
+    Beszélt nyelvek:
+</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Név</th> 
+            <th scope="col">Százalék</th> 
+            <th scope="col">Hivatalos</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($params['languages'] as $language) : ?>
+            <tr>
+                <td><?= $language['name'] ?></td>
+                <td><?= $language["percentage"] ?>%</td>
+                <td class="<?= $language['isOfficial'] === "1" ? "text-success" : "text-danger" ?>">
+                    <?= $language["isOfficial"] === "1" ? "Igen" : "Nem" ?>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>

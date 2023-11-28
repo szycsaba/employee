@@ -1,0 +1,28 @@
+<table id="employee-container__datatable" class="table table-striped hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Birth date</th>
+            <th>Gender</th>
+            <th>Hire date</th>
+            <th>Title</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($params["employees"] as $employee) : ?>
+            <tr>
+                <td><?= $employee["first_name"] . " " . $employee["last_name"] ?></td>
+                <td><?= $employee["birth_date"] ?></td>
+                <td><?= $employee["gender"] ?></td>
+                <td><?= $employee["hire_date"] ?></td>
+                <td><?= $employee["title"] ?></td>
+                <td><?= $employee["dept_name"] ?></td>
+                <td><?= $employee["salary"] ?></td>
+                <td><a href="/employee?id=<?=$employee["emp_no"]?>">Edit</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

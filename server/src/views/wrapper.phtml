@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.jqueryui.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"/>
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Employee Data Controller</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="public/js/main.js"></script>
+</head>
+<body>
+<div class="container-fluid vh-100 bg-light">
+
+    <header class="header h-10">
+        <h3 class="text-center mb-0 pt-4 h-100">Employee Data Controller</h3>
+    </header>
+
+    <section class="employee-container h-80">
+        <?= $params['content'] ?>
+    </section>
+
+    <footer class="footer h-10">
+        <h6 class="text-center mb-0 pt-4 h-100">Created by: Csaba Szy</h6>
+    </footer>
+
+</div>
+</body>
+</html>

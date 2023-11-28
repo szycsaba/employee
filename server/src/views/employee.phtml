@@ -1,0 +1,72 @@
+<?php $employee = $params['employee'][0]; ?>
+
+<form method="POST" action="/employee">
+    <div class="form-group row">
+        <label for="firstName" class="col-4 col-form-label">First name</label>
+        <div class="col-8">
+            <input type="text" class="form-control" id="firstName" name="firstName" value="<?= $employee['first_name'] ?>">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="lastName" class="col-4 col-form-label">Last name</label>
+        <div class="col-8">
+            <input type="text" class="form-control" id="lastName" name="lastName" value="<?= $employee['last_name'] ?>">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="birthDate" class="col-4 col-form-label">Birth date</label>
+        <div class="col-8">
+            <input type="text" class="form-control" id="birthDate" name="birthDate" value="<?= $employee['birth_date'] ?>" readonly>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="gender" class="col-4 col-form-label">Gender</label>
+        <div class="col-8">
+            <input type="text" class="form-control" id="gender" name="gender" value="<?= $employee['male'] ?>" readonly>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="hireDate" class="col-4 col-form-label">Hire date</label>
+        <div class="col-8">
+            <input type="text" class="form-control datepicker hasDatepicker" id="hireDate" name="hireDate" value="<?= $employee['hire_date'] ?>">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="title" class="col-4 col-form-label">Title</label>
+        <div class="col-8">
+            <select class="form-control" id="title" name="title">
+                <?php foreach ($params['titles'] as $title):?>
+                    <?php if($title['title'] === $employee['title']) : ?>
+                        <option value="<?= $title['title'] ?>" selected><?= $title['title'] ?></option>
+                    <?php else : ?>
+                        <option value="<?= $title['title'] ?>"><?= $title['title'] ?></option>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="department" class="col-4 col-form-label">Department</label>
+        <div class="col-8">
+            <select class="form-control" id="department" name="department">
+                <?php foreach ($params['departments'] as $department):?>
+                    <?php if($department['dept_no'] === $employee['dept_no']) : ?>
+                        <option value="<?= $department['dept_no'] ?>" selected><?= $department['dept_name'] ?></option>
+                    <?php else : ?>
+                        <option value="<?= $department['dept_no'] ?>"><?= $department['dept_name'] ?></option>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="salary" class="col-4 col-form-label">Salary</label>
+        <div class="col-8">
+            <input type="text" class="form-control" id="salary" name="salary" value="<?= $employee['salary'] ?>">
+        </div>
+    </div>
+    <input type="hidden" name="emp_no" value="<?= $employee['emp_no'] ?>">
+    <input type="submit" class="btn btn-primary btn-sm col-4" id="save" name="save" value="Save">
+    <input type="submit" class="btn btn-danger btn-sm col-4" id="delete" name="delete" value="Delete">
+    <a href="/" class="btn btn-dark btn-sm col-3">Back</a>
+</form>
